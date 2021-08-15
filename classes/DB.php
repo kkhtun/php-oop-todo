@@ -141,6 +141,7 @@ class DB
 
         // Total Page Calculation
         $totalPages = (int) ceil($totalRecords / $records_per_page);
+        $totalPages = $totalPages === 0 ? 1 : $totalPages;
 
         // Check GET params for page, also check out of bounds
         $page_no = isset($_GET['page']) ? $_GET['page'] : 1;
